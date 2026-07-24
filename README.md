@@ -1,4 +1,4 @@
-# protondrive-linux-with-otp-autorenew
+# protondrive-linux-with-otp-renew
 
 [![GitHub license](https://img.shields.io/github/license/dadtronics/protondrive-linux.svg)](https://github.com/dadtronics/protondrive-linux/blob/main/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/dadtronics/protondrive-linux.svg)](https://github.com/dadtronics/protondrive-linux/stargazers)
@@ -42,8 +42,8 @@ pacman -Q rclone fuse3 oath-toolkit
 ### 1. Cloner ou télécharger les scripts
 ```bash
 cd ~
-git clone https://github.com/deados/protondrive-linux-with-otp-autorenew.git
-cd protondrive-linux-with-otp-autorenew
+git clone https://github.com/deados/protondrive-linux-with-otp-renew.git
+cd protondrive-linux-with-otp-renew
 chmod +x setup-proton-mount.sh uninstall-proton-mount.sh
 ```
 
