@@ -116,15 +116,12 @@ Note the Proton Drive is mounted each time you login automatically.
 
 ## 🧼 Uninstall
 
-To remove the auto-mount setup:
+To remove the installation, use **uninstall-proton-mount.sh**:
 
 ```bash
-systemctl --user disable --now rclone-proton.mount.service
-rm ~/.config/systemd/user/rclone-proton.mount.service
+chmod +x uninstall-proton-mount.sh
+./uninstall-proton-mount.sh
 ```
-
-(Optional) Remove `~/ProtonDrive` if you no longer need the mount point.
-
 ---
 
 ## 📁 Files
@@ -144,19 +141,24 @@ rm ~/.config/systemd/user/rclone-proton.mount.service
 
 ---
 
-## 🛟 Troubleshooting
+## 🛟 Commandes utiles :
+  Statut    : systemctl --user status rclone-proton.mount.service
+  Redémarrer : systemctl --user restart rclone-proton.mount.service
+  Logs      : journalctl --user -u rclone-proton.mount.service -f
+  Logs rclone : tail -f /home/deados/.cache/rclone/proton-mount.log
+  Vérifier mount : ls /home/deados/ProtonDrive
 
-If the mount isn't working:
+## Fichiers créés :
+  Service systemd : /home/deados/.config/systemd/user/rclone-proton.mount.service
+  Script TOTP      : /home/deados/.config/rclone/gen-totp.sh
+  Secret TOTP     : /home/deados/.config/proton-totp.secret (chmod 600)
+  Config rclone   : /home/deados/.config/rclone/rclone.conf
 
-```bash
-journalctl --user -u rclone-proton.mount.service
-```
-
-To restart the service manually:
-
-```bash
-systemctl --user restart rclone-proton.mount.service
-```
+## Désinstallation :
+  systemctl --user disable --now rclone-proton.mount.service
+  rm /home/deados/.config/systemd/user/rclone-proton.mount.service
+  rm /home/deados/.config/rclone/gen-totp.sh /home/deados/.config/proton-totp.secret
+  systemctl --user daemon-reload
 
 ---
 
